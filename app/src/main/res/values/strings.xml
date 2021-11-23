@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Citizen</string>
+    <string name="game_list_msg">Elige una partida:</string>
 </resources>
