@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Citizen</string>
+    <string name="game_list_msg">Elige una partida:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

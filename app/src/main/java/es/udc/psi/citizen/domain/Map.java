@@ -1,4 +1,4 @@
-package es.udc.psi.citizen.entity;
+package es.udc.psi.citizen.domain;
 
 import java.util.ArrayList;
 
