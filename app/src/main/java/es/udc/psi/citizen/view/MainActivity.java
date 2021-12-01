@@ -1,0 +1,32 @@
+package es.udc.psi.citizen.view;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.os.Bundle;
+
+import es.udc.psi.citizen.R;
+import es.udc.psi.citizen.domain.Model;
+import es.udc.psi.citizen.domain.ModelImpl;
+
+public class MainActivity extends AppCompatActivity {
+
+    Model model;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        model = new ModelImpl();
+
+        Fragment gamesFragment = new GameListFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragment_container, gamesFragment);
+        transaction.commit();
+    }
+}
