@@ -8,8 +8,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import es.udc.psi.citizen.R;
+import es.udc.psi.citizen.data.DataRepository;
 import es.udc.psi.citizen.domain.Model;
-import es.udc.psi.citizen.domain.ModelImpl;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        model = new ModelImpl();
+        model = DataRepository.getData();
 
         Fragment gamesFragment = new GameListFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();

@@ -1,6 +1,7 @@
 package es.udc.psi.citizen.domain;
 
 import java.time.LocalDateTime;
+import static es.udc.psi.citizen.domain.ModelConst.MONEY_AT_START;
 
 public class Game implements Updatable{
 
@@ -10,8 +11,13 @@ public class Game implements Updatable{
 
     public Game() {
         map = new Map(5);
-        player = new UserPlayer("Name", 30000);
+        player = new UserPlayer("Name", MONEY_AT_START);
         lastUpdate = LocalDateTime.now();
+    }
+
+    public Game(int nCities, String userName) {
+        map = new Map(nCities);
+        player = new UserPlayer(userName, MONEY_AT_START);
     }
 
     @Override

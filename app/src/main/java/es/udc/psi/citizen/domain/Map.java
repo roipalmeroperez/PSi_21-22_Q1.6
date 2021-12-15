@@ -11,6 +11,10 @@ public class Map implements Updatable{
             cities.add(new City("City " + i));
     }
 
+    public ArrayList<City> getCities() {
+        return cities;
+    }
+
     @Override
     public void update() {
         for (int i = 0; i < cities.size(); i++)
