@@ -35,25 +35,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Game 1"
+                android:id="@+id/game1_button"
+                android:text="@string/empty_str"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Game 2"
+                android:id="@+id/game2_button"
+                android:text="@string/empty_str"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Game 3"
+                android:id="@+id/game3_button"
+                android:text="@string/empty_str"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Game 4"
+                android:id="@+id/game4_button"
+                android:text="@string/empty_str"
                 />
             <Button
                 android:layout_width="match_parent"

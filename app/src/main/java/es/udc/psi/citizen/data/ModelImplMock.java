@@ -20,7 +20,7 @@ public class ModelImplMock implements Model {
     }
 
     @Override
-    public List<GameViewModel> getGameViewModel() {
+    public List<GameViewModel> getGameViewModels() {
         ArrayList<GameViewModel> list = new ArrayList<>();
         for (int i = 0; i < games.size(); i++) {
             list.add(new GameViewModel(games.get(i)));
