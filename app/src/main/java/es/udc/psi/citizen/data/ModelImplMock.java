@@ -5,8 +5,10 @@ import java.util.List;
 
 import static es.udc.psi.citizen.domain.ModelConst.MAX_GAMES;
 
+import es.udc.psi.citizen.domain.City;
 import es.udc.psi.citizen.domain.Game;
 import es.udc.psi.citizen.domain.Model;
+import es.udc.psi.citizen.viewModel.CityViewModel;
 import es.udc.psi.citizen.viewModel.GameViewModel;
 
 public class ModelImplMock implements Model {
@@ -24,6 +26,16 @@ public class ModelImplMock implements Model {
         ArrayList<GameViewModel> list = new ArrayList<>();
         for (int i = 0; i < games.size(); i++) {
             list.add(new GameViewModel(games.get(i)));
+        }
+        return list;
+    }
+
+    @Override
+    public List<CityViewModel> getCityViewModels(int gameId) {
+        ArrayList<CityViewModel> list = new ArrayList<>();
+        List<City> cities = games.get(gameId).getMap().getCities();
+        for (int i = 0; i < cities.size(); i++) {
+            list.add(new CityViewModel(cities.get(i)));
         }
         return list;
     }

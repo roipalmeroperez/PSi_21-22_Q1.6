@@ -1,7 +1,10 @@
 package es.udc.psi.citizen.view;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -69,5 +72,15 @@ public class GameListFragment extends Fragment {
             game4.setText(games.get(3).getPlayerName());
         else
             game4.setText(getString(R.string.empty_str));*/
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+//        if (games.get(0)!=null)
+        game1 = (Button) activity.findViewById(R.id.game1_button);
+        //game1.setText("Hola");
+//        else
+//        game1.setText(getString(R.string.app_name));
     }
 }
