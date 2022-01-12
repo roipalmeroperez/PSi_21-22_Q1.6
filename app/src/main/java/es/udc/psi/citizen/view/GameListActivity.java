@@ -53,6 +53,7 @@ public class GameListActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), CityListActivity.class);
                         intent.putExtra(GAME_ID_KEY, j);
                         intent.setAction(Intent.ACTION_SEND);
+                        //Intent intent = new Intent(getApplicationContext(), CityActivity.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "Add games is not implemented yet", Toast.LENGTH_SHORT).show();
