@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Citizen">
         <activity
-            android:name=".domain.CityListActivity"
-            android:exported="false" />
+            android:name=".view.CityListActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.GameListActivity"
             android:exported="true"> <!-- android:exported="false" -->
