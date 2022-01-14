@@ -16,6 +16,8 @@ import es.udc.psi.citizen.data.DataRepository;
 import es.udc.psi.citizen.domain.Model;
 import es.udc.psi.citizen.R;
 import es.udc.psi.citizen.viewModel.GameViewModel;
+
+import static es.udc.psi.citizen.viewModel.viewModelConst.CITY_ID_KEY;
 import static es.udc.psi.citizen.viewModel.viewModelConst.GAME_ID_KEY;
 import static es.udc.psi.citizen.viewModel.viewModelConst.MAX_GAMES_BUTTONS;
 
@@ -52,8 +54,10 @@ public class GameListActivity extends AppCompatActivity {
                     if (j < games.size()) {
                         Intent intent = new Intent(getApplicationContext(), CityListActivity.class);
                         intent.putExtra(GAME_ID_KEY, j);
-                        intent.setAction(Intent.ACTION_SEND);
+                        //intent.setAction(Intent.ACTION_SEND);
                         //Intent intent = new Intent(getApplicationContext(), CityActivity.class);
+                        //intent.putExtra(GAME_ID_KEY, "3");
+                        //intent.putExtra(CITY_ID_KEY, "4");
                         startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "Add games is not implemented yet", Toast.LENGTH_SHORT).show();

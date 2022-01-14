@@ -12,17 +12,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
+import es.udc.psi.citizen.data.DataRepository;
 import es.udc.psi.citizen.databinding.ActivityCityBinding;
+import es.udc.psi.citizen.domain.City;
 import es.udc.psi.citizen.view.ui.main.SectionsPagerAdapter;
+import es.udc.psi.citizen.R;
+
+import static es.udc.psi.citizen.viewModel.viewModelConst.CITY_ID_KEY;
+import static es.udc.psi.citizen.viewModel.viewModelConst.GAME_ID_KEY;
 
 public class CityActivity extends AppCompatActivity {
 
     private ActivityCityBinding binding;
+    int gameId, cityId;
+    City city;
+    TextView cityNameTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_city);
 
         binding = ActivityCityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -32,14 +43,20 @@ public class CityActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = binding.fab;
+        //FloatingActionButton fab = binding.fab;
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        /*fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
+        gameId = getIntent().getExtras().getInt(GAME_ID_KEY);
+        cityId = getIntent().getExtras().getInt(CITY_ID_KEY);
+        city = DataRepository.getData().getCity(gameId, cityId);
+
+        cityNameTv = findViewById(R.id.city_title);
+        cityNameTv.setText(city.getName());
     }
 }

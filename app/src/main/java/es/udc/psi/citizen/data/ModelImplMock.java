@@ -40,4 +40,9 @@ public class ModelImplMock implements Model {
         return list;
     }
 
+    @Override
+    public City getCity(int gameId, int cityId) {
+        return games.get(gameId).getMap().getCities().get(cityId);
+    }
+
 }
