@@ -11,4 +11,5 @@ public interface Model {
     public List<CityViewModel> getCityViewModels(int gameId);
     public int getPlayerMoney(int gameId);
     public City getCity(int gameId, int cityId);
+    public void addGame(String playerName, int citiesNumber, String citiesNames);
 }

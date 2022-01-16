@@ -52,7 +52,6 @@ public class CityListActivity extends AppCompatActivity {
         citiesAdapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //cities.get(recyclerView.getChildAdapterPosition(view));
                 Intent intent = new Intent(getApplicationContext(), CityActivity.class);
                 intent.putExtra(GAME_ID_KEY, gameId);
                 intent.putExtra(CITY_ID_KEY, recyclerView.getChildAdapterPosition(view));

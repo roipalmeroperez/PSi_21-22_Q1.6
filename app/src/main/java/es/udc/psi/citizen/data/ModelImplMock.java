@@ -57,4 +57,9 @@ public class ModelImplMock implements Model {
         return games.get(gameId).getMap().getCities().get(cityId);
     }
 
+    @Override
+    public void addGame(String playerName, int citiesNumber, String citiesNames) {
+        games.add(new Game(citiesNumber, citiesNames, playerName));
+    }
+
 }
