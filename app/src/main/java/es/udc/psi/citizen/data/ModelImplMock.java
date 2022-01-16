@@ -21,6 +21,13 @@ public class ModelImplMock implements Model {
         games.add(new Game(20, "Jaimito"));
     }
 
+    public ModelImplMock(String citiesNames) {
+        games = new ArrayList<>(MAX_GAMES);
+        games.add(new Game(10, citiesNames, "Pepe"));
+        games.add(new Game(5, citiesNames, "Manolo"));
+        games.add(new Game(20, citiesNames, "Jaimito"));
+    }
+
     @Override
     public List<GameViewModel> getGameViewModels() {
         ArrayList<GameViewModel> list = new ArrayList<>();
@@ -38,6 +45,11 @@ public class ModelImplMock implements Model {
             list.add(new CityViewModel(cities.get(i)));
         }
         return list;
+    }
+
+    @Override
+    public int getPlayerMoney(int gameId) {
+        return games.get(gameId).getPlayer().getGold();
     }
 
     @Override

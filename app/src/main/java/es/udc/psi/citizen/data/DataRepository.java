@@ -10,4 +10,10 @@ public class DataRepository {
             data = new ModelImplMock();
         return data;
     }
+
+    public static Model getData(String citiesNames) {
+        if (data==null)
+            data = new ModelImplMock(citiesNames);
+        return data;
+    }
 }

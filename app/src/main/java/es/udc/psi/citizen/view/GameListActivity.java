@@ -30,6 +30,7 @@ public class GameListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
+        DataRepository.getData(getString(R.string.cities_names));
         setUI();
     }
 

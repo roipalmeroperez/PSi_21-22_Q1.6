@@ -28,7 +28,8 @@ public class CityActivity extends AppCompatActivity {
     private ActivityCityBinding binding;
     int gameId, cityId;
     City city;
-    TextView cityNameTv;
+    TextView cityNameTv, cityPlayerMoney;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,20 +44,14 @@ public class CityActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-        //FloatingActionButton fab = binding.fab;
 
-        /*fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
         gameId = getIntent().getExtras().getInt(GAME_ID_KEY);
         cityId = getIntent().getExtras().getInt(CITY_ID_KEY);
         city = DataRepository.getData().getCity(gameId, cityId);
 
         cityNameTv = findViewById(R.id.city_title);
         cityNameTv.setText(city.getName());
+        cityPlayerMoney = findViewById(R.id.city_player_money);
+        cityPlayerMoney.setText(getText(R.string.player_money_str).toString() + ": " + DataRepository.getData().getPlayerMoney(gameId));
     }
 }

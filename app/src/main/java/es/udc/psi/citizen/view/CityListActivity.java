@@ -22,8 +22,9 @@ import java.util.List;
 
 public class CityListActivity extends AppCompatActivity {
 
-    int gameId;
+    int gameId, playerMoney;
     List<CityViewModel> cities;
+    TextView playerMoneyTv;
     RecyclerView recyclerView;
     private CitiesAdapter citiesAdapter;
 
@@ -34,6 +35,9 @@ public class CityListActivity extends AppCompatActivity {
 
         gameId = (int) Integer.parseInt(getIntent().getExtras().get(GAME_ID_KEY).toString()) ;
         cities = DataRepository.getData().getCityViewModels(gameId);
+        playerMoney = DataRepository.getData().getPlayerMoney(gameId);
+        playerMoneyTv = findViewById(R.id.cities_list_player_money);
+        playerMoneyTv.setText(getText(R.string.player_money_str).toString() + ": " + playerMoney);
         recyclerView = findViewById(R.id.cities_rv);
 
         initRecycler(cities);

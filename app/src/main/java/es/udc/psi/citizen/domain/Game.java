@@ -23,6 +23,12 @@ public class Game implements Updatable{
         lastUpdate = LocalDateTime.now();
     }
 
+    public Game(int nCities, String citiesNames, String userName) {
+        map = new Map(nCities, citiesNames);
+        player = new UserPlayer(userName, MONEY_AT_START);
+        lastUpdate = LocalDateTime.now();
+    }
+
     @Override
     public void update() {
         lastUpdate = LocalDateTime.now();
