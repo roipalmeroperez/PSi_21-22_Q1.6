@@ -13,6 +13,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import es.udc.psi.citizen.R;
 import es.udc.psi.citizen.data.DataRepository;
 import es.udc.psi.citizen.domain.City;
@@ -25,10 +28,6 @@ import es.udc.psi.citizen.domain.City;
 public class ResumeCityFragment extends Fragment {
 
     private static int gameId, cityId;
-    private City city;
-    private TextView textView;
-    private LinearLayout linearLayout;
-    private FrameLayout frameLayout;
     private TableLayout tableLayout;
 
     public ResumeCityFragment() {
@@ -51,7 +50,6 @@ public class ResumeCityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        city = DataRepository.getData().getCity(gameId, cityId);
         View view = inflater.inflate(R.layout.fragment_resume_city, container, false);
         createTable(view);
 
@@ -65,20 +63,33 @@ public class ResumeCityFragment extends Fragment {
         TableRow.LayoutParams textParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
         textParams.weight= 1;
 
-        for (int i = 0; i < 10; i++) {
+        List<String> labels = getValuesNames();
+        List<Integer> values = DataRepository.getData().getCityResumeValues(gameId, cityId);
+
+        for (int i = 0; i < values.size(); i++) {
             TableRow tableRow = new TableRow(view.getContext());
             tableRow.setLayoutParams(rowParams);
 
             TextView detailName = new TextView(view.getContext());
-            detailName.setText("detalle de la ciudad " + i);
+            detailName.setText(labels.get(i));
             detailName.setLayoutParams(textParams);
             TextView detailValue = new TextView(view.getContext());
-            detailValue.setText("" + i);
+            detailValue.setText("" + values.get(i));
             detailValue.setLayoutParams(textParams);
 
             tableRow.addView(detailName);
             tableRow.addView(detailValue);
             tableLayout.addView(tableRow);
         }
+    }
+
+    private List<String> getValuesNames(){
+        ArrayList<String> names = new ArrayList<>();
+        names.add(getString(R.string.population_str));
+        names.add(getString(R.string.goods_grain_str));
+        names.add(getString(R.string.goods_wood_str));
+        names.add(getString(R.string.goods_tools_str));
+        names.add(getString(R.string.goods_iron_str));
+        return names;
     }
 }

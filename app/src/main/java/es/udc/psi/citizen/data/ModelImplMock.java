@@ -62,4 +62,16 @@ public class ModelImplMock implements Model {
         games.add(new Game(citiesNumber, citiesNames, playerName));
     }
 
+    @Override
+    public List<Integer> getCityResumeValues(int gameId, int cityId) {
+        ArrayList<Integer> values = new ArrayList<>();
+        City city = getCity(gameId, cityId);
+        values.add(city.getPopulation());
+        values.add(city.getStore().grain);
+        values.add(city.getStore().wood);
+        values.add(city.getStore().tools);
+        values.add(city.getStore().iron);
+        return values;
+    }
+
 }

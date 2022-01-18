@@ -1,10 +1,10 @@
 package es.udc.psi.citizen.domain;
 
-public class Commodity {
-    public int food, wood, tools, iron;
+public class Goods {
+    public int grain, wood, tools, iron;
 
-    public Commodity() {
-        this.food = 15;
+    public Goods() {
+        this.grain = 15;
         this.wood = 5;
         this.tools = 10;
         this.iron = 5;

@@ -31,14 +31,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
         switch (position) {
             case 0:
                 return ResumeCityFragment.newInstance(gameId, cityId);
             case 1:
-                return PlaceholderFragment.newInstance(-1);
+                return TradeCityFragment.newInstance();
+            case 2:
+                return WarehouseCityFragment.newInstance();
+            case 3:
+                return BuildingsCityFragment.newInstance();
             default:
-                return PlaceholderFragment.newInstance(position +1);
+                return null;
         }
 
     }

@@ -12,4 +12,5 @@ public interface Model {
     public int getPlayerMoney(int gameId);
     public City getCity(int gameId, int cityId);
     public void addGame(String playerName, int citiesNumber, String citiesNames);
+    public List<Integer> getCityResumeValues(int gameId, int cityId);
 }

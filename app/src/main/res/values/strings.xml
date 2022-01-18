@@ -19,6 +19,12 @@
     <string name="city_tab_text_3">Almacén</string>
     <string name="city_tab_text_4">Edificios</string>
     <string name="cities_names">Coruña;Vigo;Madrid;Valencia;Sevilla;Segovia;Cuenca;Bilvao;Oviedo;Huesca;Palencia;Málaga;Almería;Córdoba;Barcelona;Lérida;Granada;León;Valladolid;Huelva</string>
+    <string name="population_str">Población</string>
+    <string name="goods_grain_str">Grano</string>
+    <string name="goods_wood_str">Madera</string>
+    <string name="goods_tools_str">Herramientas</string>
+    <string name="goods_iron_str">Hierro</string>
+    <string name="not_implemented_msg">Aún no se ha implementado.</string>
 
 
 </resources>
