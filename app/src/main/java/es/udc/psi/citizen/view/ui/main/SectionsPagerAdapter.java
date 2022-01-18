@@ -19,10 +19,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.city_tab_text_1, R.string.city_tab_text_2, R.string.city_tab_text_3, R.string.city_tab_text_4};
     private final Context mContext;
+    private int gameId, cityId;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public SectionsPagerAdapter(Context context, FragmentManager fm, int gameId, int cityId) {
         super(fm);
         mContext = context;
+        this.gameId = gameId;
+        this.cityId = cityId;
     }
 
     @Override
@@ -31,7 +34,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         switch (position) {
             case 0:
-                return PlaceholderFragment.newInstance(2);
+                return ResumeCityFragment.newInstance(gameId, cityId);
             case 1:
                 return PlaceholderFragment.newInstance(-1);
             default:

@@ -39,15 +39,15 @@ public class CityActivity extends AppCompatActivity {
         binding = ActivityCityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        gameId = getIntent().getExtras().getInt(GAME_ID_KEY);
+        cityId = getIntent().getExtras().getInt(CITY_ID_KEY);
+        city = DataRepository.getData().getCity(gameId, cityId);
+
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager(), gameId, cityId);
         ViewPager viewPager = binding.viewPager;
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-
-        gameId = getIntent().getExtras().getInt(GAME_ID_KEY);
-        cityId = getIntent().getExtras().getInt(CITY_ID_KEY);
-        city = DataRepository.getData().getCity(gameId, cityId);
 
         cityNameTv = findViewById(R.id.city_title);
         cityNameTv.setText(city.getName());

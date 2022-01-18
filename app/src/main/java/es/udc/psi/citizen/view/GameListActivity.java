@@ -3,6 +3,7 @@ package es.udc.psi.citizen.view;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -106,8 +107,12 @@ public class GameListActivity extends AppCompatActivity {
                     }
                 }
 
-                if (create)
+                if (create) {
                     DataRepository.getData().addGame(nameEt.getText().toString(), nCities, getString(R.string.cities_names));
+                    Intent intent = getIntent();
+                    finish();
+                    startActivity(intent);
+                }
             }
         });
         builder.setNegativeButton(getString(R.string.creation_game_negative_button_str), new DialogInterface.OnClickListener() {
