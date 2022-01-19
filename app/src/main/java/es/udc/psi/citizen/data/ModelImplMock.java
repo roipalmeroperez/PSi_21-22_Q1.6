@@ -7,6 +7,7 @@ import static es.udc.psi.citizen.domain.ModelConst.MAX_GAMES;
 
 import es.udc.psi.citizen.domain.City;
 import es.udc.psi.citizen.domain.Game;
+import es.udc.psi.citizen.domain.Goods;
 import es.udc.psi.citizen.domain.Model;
 import es.udc.psi.citizen.viewModel.CityViewModel;
 import es.udc.psi.citizen.viewModel.GameViewModel;
@@ -71,6 +72,17 @@ public class ModelImplMock implements Model {
         values.add(city.getStore().wood);
         values.add(city.getStore().tools);
         values.add(city.getStore().iron);
+        return values;
+    }
+
+    @Override
+    public List<Integer> getPlayerStore(int gameId) {
+        ArrayList<Integer> values = new ArrayList<>();
+        Goods goods = games.get(gameId).getPlayer().getStore();
+        values.add(goods.grain);
+        values.add(goods.wood);
+        values.add(goods.tools);
+        values.add(goods.iron);
         return values;
     }
 

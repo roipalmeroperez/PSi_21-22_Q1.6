@@ -4,17 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ui.main.ResumeCityFragment">
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/resume_city_table">
-        <TableRow android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <TextView android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-        </TableRow>
-    </TableLayout>
-
+        android:id="@+id/resume_city_table" />
 
 </FrameLayout>

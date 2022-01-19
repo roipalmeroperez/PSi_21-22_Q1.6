@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.main.WarehouseCityFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/not_implemented_msg" />
+        android:orientation="vertical"
+        android:id="@+id/warehouse_city_table" />
 
 </FrameLayout>
