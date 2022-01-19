@@ -104,20 +104,28 @@ public class ModelImplMock implements Model {
 
         switch (goodsId) {
             case 0:
-                cityGoods.grain++;
-                playerGoods.grain--;
+                if (playerGoods.grain > 0) {
+                    cityGoods.grain++;
+                    playerGoods.grain--;
+                }
                 break;
             case 1:
-                cityGoods.wood++;
-                playerGoods.wood--;
+                if (playerGoods.wood > 0) {
+                    cityGoods.wood++;
+                    playerGoods.wood--;
+                }
                 break;
             case 2:
-                cityGoods.tools++;
-                playerGoods.tools--;
+                if (playerGoods.tools > 0) {
+                    cityGoods.tools++;
+                    playerGoods.tools--;
+                }
                 break;
             case 3:
-                cityGoods.iron++;
-                playerGoods.iron--;
+                if (playerGoods.iron > 0) {
+                    cityGoods.iron++;
+                    playerGoods.iron--;
+                }
                 break;
             default:
                 break;
@@ -131,20 +139,28 @@ public class ModelImplMock implements Model {
 
         switch (goodsId) {
             case 0:
-                cityGoods.grain--;
-                playerGoods.grain++;
+                if (cityGoods.grain > 0) {
+                    cityGoods.grain--;
+                    playerGoods.grain++;
+                }
                 break;
             case 1:
-                cityGoods.wood--;
-                playerGoods.wood++;
+                if (cityGoods.wood > 0) {
+                    cityGoods.wood--;
+                    playerGoods.wood++;
+                }
                 break;
             case 2:
-                cityGoods.tools--;
-                playerGoods.tools++;
+                if (cityGoods.tools > 0) {
+                    cityGoods.tools--;
+                    playerGoods.tools++;
+                }
                 break;
             case 3:
-                cityGoods.iron--;
-                playerGoods.iron++;
+                if(cityGoods.iron > 0) {
+                    cityGoods.iron--;
+                    playerGoods.iron++;
+                }
                 break;
             default:
                 break;
