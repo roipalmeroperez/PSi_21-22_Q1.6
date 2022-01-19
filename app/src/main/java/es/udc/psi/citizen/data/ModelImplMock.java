@@ -76,6 +76,17 @@ public class ModelImplMock implements Model {
     }
 
     @Override
+    public List<Integer> getCityGoodsValues(int gameId, int cityId) {
+        ArrayList<Integer> values = new ArrayList<>();
+        Goods goods = getCity(gameId, cityId).getStore();
+        values.add(goods.grain);
+        values.add(goods.wood);
+        values.add(goods.tools);
+        values.add(goods.iron);
+        return values;
+    }
+
+    @Override
     public List<Integer> getPlayerStore(int gameId) {
         ArrayList<Integer> values = new ArrayList<>();
         Goods goods = games.get(gameId).getPlayer().getStore();
@@ -84,6 +95,60 @@ public class ModelImplMock implements Model {
         values.add(goods.tools);
         values.add(goods.iron);
         return values;
+    }
+
+    @Override
+    public void sellGoods(int gameId, int cityId, int goodsId) {
+        Goods cityGoods = getCity(gameId, cityId).getStore();
+        Goods playerGoods = games.get(gameId).getPlayer().getStore();
+
+        switch (goodsId) {
+            case 0:
+                cityGoods.grain++;
+                playerGoods.grain--;
+                break;
+            case 1:
+                cityGoods.wood++;
+                playerGoods.wood--;
+                break;
+            case 2:
+                cityGoods.tools++;
+                playerGoods.tools--;
+                break;
+            case 3:
+                cityGoods.iron++;
+                playerGoods.iron--;
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void buyGoods(int gameId, int cityId, int goodsId) {
+        Goods cityGoods = getCity(gameId, cityId).getStore();
+        Goods playerGoods = games.get(gameId).getPlayer().getStore();
+
+        switch (goodsId) {
+            case 0:
+                cityGoods.grain--;
+                playerGoods.grain++;
+                break;
+            case 1:
+                cityGoods.wood--;
+                playerGoods.wood++;
+                break;
+            case 2:
+                cityGoods.tools--;
+                playerGoods.tools++;
+                break;
+            case 3:
+                cityGoods.iron--;
+                playerGoods.iron++;
+                break;
+            default:
+                break;
+        }
     }
 
 }

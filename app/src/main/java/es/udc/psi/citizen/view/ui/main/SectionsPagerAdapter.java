@@ -35,7 +35,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return ResumeCityFragment.newInstance(gameId, cityId);
             case 1:
-                return TradeCityFragment.newInstance();
+                return TradeCityFragment.newInstance(gameId, cityId);
             case 2:
                 return WarehouseCityFragment.newInstance(gameId);
             case 3:
