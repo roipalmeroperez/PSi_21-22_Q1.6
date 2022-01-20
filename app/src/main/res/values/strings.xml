@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Citizen</string>
+    <string name="game_list_msg">Elige una partida:</string>
+    <string name="date_formatter">dd/MM/yy hh:mm</string>
+    <string name="empty_str">Vacío</string>
+    <string name="player_money_str">Dinero</string>
+    <string name="creation_game_title">Datos de la partida</string>
+    <string name="creation_game_player_str">Elige el nombre de tu jugador:</string>
+    <string name="creation_game_cities_str">Elige cuantas ciudades tendrá el mapa:</string>
+    <string name="creation_game_positive_button_str">Crear</string>
+    <string name="creation_game_negative_button_str">Cancelar</string>
+    <string name="creation_game_empty_name_err">El nombre del jugador no debe ser vacío</string>
+    <string name="creation_game_cities_number_err">El número de ciudades debe estar entre 5 y 20</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_city">City Activity</string>
+    <string name="city_tab_text_1">Detalles</string>
+    <string name="city_tab_text_2">Comercio</string>
+    <string name="city_tab_text_3">Almacén</string>
+    <string name="city_tab_text_4">Edificios</string>
+    <string name="cities_names">Coruña;Vigo;Madrid;Valencia;Sevilla;Segovia;Cuenca;Bilvao;Oviedo;Huesca;Palencia;Málaga;Almería;Córdoba;Barcelona;Lérida;Granada;León;Valladolid;Huelva</string>
+    <string name="population_str">Población</string>
+    <string name="goods_grain_str">Grano</string>
+    <string name="goods_wood_str">Madera</string>
+    <string name="goods_tools_str">Herramientas</string>
+    <string name="goods_iron_str">Hierro</string>
+    <string name="not_implemented_msg">Aún no se ha implementado.</string>
+
+
 </resources>

@@ -1,4 +1,4 @@
-package es.udc.psi.citizen.entity;
+package es.udc.psi.citizen.domain;
 
 public interface Updatable {
     public void update();

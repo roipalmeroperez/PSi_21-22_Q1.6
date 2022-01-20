@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Citizen</string>
+    <string name="game_list_msg">Choose game:</string>
+    <string name="date_formatter">MM/dd/yy hh:mm</string>
+    <string name="empty_str">Empty</string>
+    <string name="player_money_str">Money</string>
+    <string name="creation_game_title">Game data</string>
+    <string name="creation_game_player_str">Choose your player name:</string>
+    <string name="creation_game_cities_str">Choose who many towns have your map:</string>
+    <string name="creation_game_positive_button_str">Create</string>
+    <string name="creation_game_negative_button_str">Cancel</string>
+    <string name="creation_game_empty_name_err">Your player\'s name can\'t be empty</string>
+    <string name="creation_game_cities_number_err">Towns number must be between 5 and 20</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_city">City Activity</string>
+    <string name="city_tab_text_1">Details</string>
+    <string name="city_tab_text_2">Trade</string>
+    <string name="city_tab_text_3">Warehouse</string>
+    <string name="city_tab_text_4">Buildings</string>
+    <string name="cities_names">Coruña;Vigo;Madrid;Valencia;Sevilla;Segovia;Cuenca;Bilvao;Oviedo;Huesca;Palencia;Málaga;Almería;Córdoba;Barcelona;Lérida;Granada;León;Valladolid;Huelva</string>
+    <string name="population_str">Population</string>
+    <string name="goods_grain_str">Grain</string>
+    <string name="goods_wood_str">Wood</string>
+    <string name="goods_tools_str">Tools</string>
+    <string name="goods_iron_str">Iron</string>
+    <string name="not_implemented_msg">Not implemented yet.</string>
+
+
+</resources>
