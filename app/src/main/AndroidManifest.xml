@@ -10,13 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Citizen">
         <activity
-            android:name=".view.MainActivity"
-            android:exported="true">
+            android:name=".view.CityActivity"
+            android:exported="false"
+            android:label="@string/title_activity_city"
+            android:theme="@style/Theme.Citizen.NoActionBar" />
+        <activity
+            android:name=".view.CityListActivity"
+            android:theme="@style/Theme.Citizen.NoActionBar"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.GameListActivity"
+            android:exported="true"> <!-- android:exported="false" -->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- /> -->
+        </activity>
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
         </activity>
     </application>
 
